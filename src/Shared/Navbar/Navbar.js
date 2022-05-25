@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -27,39 +28,44 @@ const Navbar = () => {
               class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a>Tools</a>
+                <Link to="/tools">Tools</Link>
               </li>
               <li>
-                <a>Portfolio</a>
+                <Link to="/portfolio">Portfolio</Link>
               </li>
               <li>
-                <a>Login</a>
+                <Link to="/blogs">Blogs</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
               </li>
             </ul>
           </div>
           <a class="btn btn-ghost normal-case text-xl">
             {" "}
-            <span className="text-[#cf570d]">CARTOOLS</span>{" "}
+            <span className="text-[#bc510f]">CARTOOL</span>{" "}
             <span className="text-gold-300">MANAGEMENT</span>
           </a>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal p-0">
             <li>
-              <a>Home</a>
-            </li>
-
-            <li>
-              <a>Tools</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a>Portfolio</a>
+              <Link to="/tools">Tools</Link>
             </li>
             <li>
-              <a>Login</a>
+              <Link to="/portfolio">Portfolio</Link>
+            </li>
+            <li>
+              <Link to="/blogs">Blogs</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
             </li>
           </ul>
         </div>
