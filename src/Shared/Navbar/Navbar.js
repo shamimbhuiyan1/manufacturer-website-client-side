@@ -1,7 +1,40 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { signOut } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firbase.init";
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+
+  const logout = () => {
+    signOut(auth);
+  };
+
+  const navberItems = (
+    <>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/tools">Tools</Link>
+      </li>
+      <li>
+        <Link to="/portfolio">Portfolio</Link>
+      </li>
+      <li>
+        <Link to="/blogs">Blogs</Link>
+      </li>
+      <li>
+        {user ? (
+          <button className="btn btn-ghost" onClick={logout}>
+            Sign Out
+          </button>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
+      </li>
+    </>
+  );
   return (
     <div>
       <div className="navbar bg-base-100 bg-black">
@@ -27,21 +60,7 @@ const Navbar = () => {
               tabIndex="0"
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black"
             >
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/tools">Tools</Link>
-              </li>
-              <li>
-                <Link to="/portfolio">Portfolio</Link>
-              </li>
-              <li>
-                <Link to="/blogs">Blogs</Link>
-              </li>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
+              {navberItems}
             </ul>
           </div>
           <a className="btn btn-ghost normal-case text-xl">
@@ -51,23 +70,7 @@ const Navbar = () => {
           </a>
         </div>
         <div className="navbar-center hidden lg:flex ">
-          <ul className="menu menu-horizontal p-0 text-white">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/tools">Tools</Link>
-            </li>
-            <li>
-              <Link to="/portfolio">Portfolio</Link>
-            </li>
-            <li>
-              <Link to="/blogs">Blogs</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-          </ul>
+          <ul className="menu menu-horizontal p-0 text-white">{navberItems}</ul>
         </div>
       </div>
     </div>

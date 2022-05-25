@@ -5,6 +5,7 @@ import Contact from "./Pages/Home/Home/Contact/Contact";
 import Home from "./Pages/Home/Home/Home";
 import Tools from "./Pages/Home/Tools/Tools";
 import Login from "./Pages/Login/Login/Login";
+import SignUp from "./Pages/Login/SignUp/SignUp";
 import NotFound from "./Pages/NotFound/NotFound";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import Footer from "./Shared/Footer/Footer";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/tools" element={<Tools></Tools>}></Route>
         <Route path="/contact" element={<Contact></Contact>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

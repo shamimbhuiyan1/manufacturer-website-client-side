@@ -5,7 +5,7 @@ import shamim from "../../assets/shamim.JPG";
 const Portfolio = () => {
   return (
     <div>
-      <div className="card card-side bg-base-100 shadow-xl my-12 mx-6">
+      <div className="card card-side bg-base-100 shadow-xl my-12 mx-6 justify-center">
         <figure>
           <img
             src={shamim}
@@ -25,13 +25,13 @@ const Portfolio = () => {
               <p>
                 {" "}
                 <span className="font-bold">Good:</span> React js,Node
-                js,Express js,
+                js,Express js,MongoDB.
               </p>
             </span>
             <span>
               <p>
                 <span className="font-bold">Deployment:</span>{" "}
-                Netlify,Heroku,Firebase
+                Netlify,Heroku,Firebase.
               </p>
             </span>
             <h2 className="text-xl font-bold mt-8">
@@ -54,11 +54,11 @@ const Portfolio = () => {
               <li>
                 3.{" "}
                 <a
-                  href="https://emamnuel-convention-centre.netlify.app/"
+                  href="https://online-camera-warehouse.web.app/"
                   target="_blank"
                 >
                   {" "}
-                  Emmanuelle's Convention Center
+                  Online Camera Warehouse
                 </a>{" "}
               </li>
             </ul>
