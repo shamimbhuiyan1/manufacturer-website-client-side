@@ -3,9 +3,9 @@ import React from "react";
 const Blogs = () => {
   return (
     <div>
-      <h1 className="text-5xl font-bold text-center my-6">
+      <h1 className="text-5xl font-bold text-primary text-center my-6">
         {" "}
-        Welcome to my Blogs
+        Welcome To My Blogs
       </h1>
 
       <div class="card w-full bg-base-100 shadow-xl">
