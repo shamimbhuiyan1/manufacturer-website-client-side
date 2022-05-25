@@ -5,7 +5,7 @@ import shamim from "../../assets/shamim.JPG";
 const Portfolio = () => {
   return (
     <div>
-      <div class="card card-side bg-base-100 shadow-xl my-12 mx-6">
+      <div className="card card-side bg-base-100 shadow-xl my-12 mx-6">
         <figure>
           <img
             src={shamim}
@@ -13,8 +13,8 @@ const Portfolio = () => {
             alt="Shamim Bhuiyan"
           />
         </figure>
-        <div class="card-body">
-          <h1 class="card-title">Name: Shamim Bhuiyan</h1>
+        <div className="card-body">
+          <h1 className="card-title">Name: Shamim Bhuiyan</h1>
           <h2 className="text-xl">Bsc On CSE</h2>
           <h3 className="text-xl">Daffodil Institute of IT</h3>
           <h2 className="text-2xl font-bold">Technologies I Learned: </h2>
