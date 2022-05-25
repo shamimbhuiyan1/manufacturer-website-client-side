@@ -63,11 +63,11 @@ const Navbar = () => {
               {navberItems}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">
+          <Link to="/" className="btn btn-ghost normal-case text-xl">
             {" "}
             <span className="text-[#f77728]">CARTOOL</span>{" "}
             <span className="text-gold-300">MANAGEMENT</span>
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal p-0 text-white">{navberItems}</ul>
