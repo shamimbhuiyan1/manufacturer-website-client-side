@@ -50,8 +50,8 @@ const Navbar = () => {
             <span className="text-gold-300">MANAGEMENT</span>
           </a>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal p-0">
+        <div className="navbar-center hidden lg:flex ">
+          <ul className="menu menu-horizontal p-0 text-white">
             <li>
               <Link to="/">Home</Link>
             </li>

@@ -1,0 +1,56 @@
+[
+    {
+        "id":1,
+      "img": "https://i.ibb.co/XCpYgTp/car-chair.png",
+      "name": "Leather Comfort Chair",
+      "description": "Carroll Leather offers an extensive collection of automotive leathers that are suitable for car upholstery.  All of these leather hides will have a protective finish that is perfect for high traffic areas such as an automotive interior.  We supply over 100 color options giving you endless possibilities when customizing or reupholstering your car.  Make your leather seats stand out with our different looks and styles.",
+      "minOrderQuantity": 5,
+      "availableQuantity": 107,
+      "price": "$820"
+    },
+    {
+        "id":2,
+      "img": "https://i.ibb.co/zFfyDGT/wheel.png",
+      "name": "Wheel",
+      "description": "Whether you’re looking for a wheel to replace a damaged one or a set of new ones to make your vehicle look better, you can find what you need here. We have wheels with various designs and finishes. They come in different diameters and widths, so you can find one that’s perfect for your car, truck, or SUV. Check out our wide selection of wheels and order today!",
+      "minOrderQuantity": 250,
+      "availableQuantity": 10,
+      "price": "$599"
+    },
+    {
+        "id":3,
+      "img": "https://i.ibb.co/mG05t53/steering.png",
+      "name": "Steering",
+      "description": "Car steering system in the automobile, it is the process of running the vehicle in the desired direction by turning, usually the front wheels. For effective control of the vehicle throughout its speed range with safety, proper steering is necessary. The system allows a driver to use only light forces to steer a heavy car.",
+      "minOrderQuantity": 20,
+      "availableQuantity": 240,
+      "price": "$799"
+    },
+    {
+        "id":4,
+      "img": "https://i.ibb.co/X8Cwt5K/car-battery.png",
+      "name": "Lithium Car Battery",
+      "description": "Knowing how to choose a good car battery is probably one of the most important things you can do for your car. You want to make sure that it runs smoothly so that you can get years of use out of it.Go with a Duralast Gold or Platinum Battery for premium performance and extra power for high-energy consumption vehicles. Duralast Gold and Platinum Batteries carry three-year nationwide warranties. For extreme or specialty performance, AutoZone carries Odyssey performance batteries and Optima AGM batteries.",
+      "minOrderQuantity": 30,
+      "availableQuantity": 1240,
+      "price": "$1099"
+    },
+    {
+        "id":5,
+      "img": "https://i.ibb.co/dGBn44V/car-headlight.png",
+      "name": "Car Headlight",
+      "description": "Headlights are quietly undergoing a technological revolution, and regulators are trying to catch up.For much of automotive history, innovation came to headlights gradually. But over the last few decades, the pace has quickened. Now, automakers are using LED technology to create arrays of tiny lights that can cast complex beam patterns. The so-called adaptive driving beams can illuminate an entire road while shutting off any bulbs that would shine in the eyes of oncoming drivers..",
+      "minOrderQuantity": 20,
+      "availableQuantity": 940,
+      "price": "$999"
+    },
+    {
+        "id":6,
+      "img": "https://i.ibb.co/FgkSKMp/car-gearing.png",
+      "name": "Car Gearing Spring",
+      "description": "The most important aspect of drag slot car racing is the gearing. Higher numbers will increase the car’s top speed, but lower numbers will decrease its top speed and cause acceleration and braking.",
+      "minOrderQuantity": 50,
+      "availableQuantity": 2940,
+      "price": "$699"
+    }
+  ]
