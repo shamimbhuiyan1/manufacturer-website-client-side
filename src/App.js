@@ -11,6 +11,10 @@ import Portfolio from "./Pages/Portfolio/Portfolio";
 import Footer from "./Shared/Footer/Footer";
 import Navbar from "./Shared/Navbar/Navbar";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
+import MyOrders from "./Pages/Dashboard/MyOrders";
+import MyReview from "./Pages/Dashboard/MyReview";
+import MyProfile from "./Pages/Dashboard/MyProfile";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 function App() {
   return (
     <div className="">
@@ -21,6 +25,18 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
 
         <Route path="/contact" element={<Contact></Contact>}></Route>
+        <Route
+          path="dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path="review" element={<MyReview></MyReview>}></Route>
+          <Route path="profile" element={<MyProfile></MyProfile>}></Route>
+        </Route>
         <Route
           path="/tools"
           element={
