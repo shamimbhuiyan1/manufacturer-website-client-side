@@ -2,7 +2,7 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div>
+    <div className="">
       <h1 className="text-5xl font-bold text-primary text-center my-6">
         {" "}
         Welcome To My Blogs
@@ -14,7 +14,7 @@ const Blogs = () => {
             1. How will you improve the performance of a React Application?
           </h2>
           <p className="ml-2">
-            <span className="text-xl ml-6 font-bold">Answer :</span>I think we
+            <span className="text-xl ml-6 font-bold">Answer :</span> I think we
             should follow below steps to improve the performance of a React
             Application : 1. Use memo and pureComponent, 2. Avoid Anonymous
             Functions, 3. Avoid Object Literals, 4. Use React.Lazy and
