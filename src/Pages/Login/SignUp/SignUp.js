@@ -4,7 +4,7 @@ import {
   useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import auth from "../../../firbase.init";
+import auth from "../../../firebase.init";
 import { useForm } from "react-hook-form";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -48,7 +48,7 @@ const SignUp = () => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
     console.log("update done");
-    navigate("/appointment");
+    navigate("/tools");
   };
   return (
     <div className="flex h-screen justify-center items-center">

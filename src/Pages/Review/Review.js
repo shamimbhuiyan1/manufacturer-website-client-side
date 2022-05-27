@@ -26,7 +26,7 @@ const Review = () => {
 
           <div className="flex justify-center items-center mb-4">
             <h1 className=" font-bold">Ratings : (5.0) </h1>
-            <span></span>
+
             <div class="rating">
               <input
                 type="radio"
@@ -77,7 +77,7 @@ const Review = () => {
 
           <div className="flex justify-center items-center mb-4">
             <h1 className=" font-bold">Ratings : (5.0) </h1>
-            <span></span>
+
             <div class="rating rating-lg rating-half">
               <input
                 type="radio"

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const useTools = () => {
   const [tools, setTools] = useState([]);
@@ -7,7 +7,7 @@ const useTools = () => {
       .then((res) => res.json())
       .then((data) => setTools(data));
   }, []);
-  return [tools];
+  return [tools, setTools];
 };
 
 export default useTools;
