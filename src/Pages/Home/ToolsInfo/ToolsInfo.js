@@ -18,6 +18,14 @@ const ToolsInfo = ({ tool }) => {
           <h2 class="card-title">{name}</h2>
           <p>{description}</p>
           <p>
+            <span className="font-bold">Available Quantity :</span>{" "}
+            {availableQuantity}
+          </p>
+          <p>
+            <span className="font-bold">Minimum Quantity :</span>{" "}
+            {minOrderQuantity}
+          </p>
+          <p>
             <span className="font-bold">Price :</span> {price}
           </p>
           <div class="card-actions">

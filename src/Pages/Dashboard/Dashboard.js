@@ -22,7 +22,7 @@ const Dashboard = () => {
             <Link to="/dashboard/review">Add A Reviews</Link>
           </li>
           <li>
-            <Link to="/dashboard/history">My Profile</Link>
+            <Link to="/dashboard/profile">My Profile</Link>
           </li>
         </ul>
       </div>
