@@ -26,7 +26,7 @@ const ProductDetail = () => {
       quantity: quantity,
     };
 
-    const url = `tools.json/tool/${toolsId}`;
+    const url = `https://tranquil-mountain-12597.herokuapp.com/tool/${toolsId}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -79,7 +79,7 @@ const ProductDetail = () => {
         setDetail(toolsInfo);
       }
 
-      const url = `tools.json/tool/${toolsId}`;
+      const url = `https://tranquil-mountain-12597.herokuapp.com/tool/${toolsId}`;
       fetch(url, {
         method: "PUT",
         headers: {
