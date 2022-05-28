@@ -78,7 +78,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal p-0 text-white">{navberItems}</ul>
         </div>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end ">
         <label
           tabIndex="1"
           for="dashboard-sidebar"

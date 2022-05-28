@@ -4,12 +4,10 @@ import toast from "react-hot-toast";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import useToolsDetail from "../../../../hooks/useToolsDetail";
 
-import "./ProductDetail.css";
-
 const ProductDetail = () => {
   const navigate = useNavigate();
-  const { inventoryId } = useParams();
-  const [detail, setDetail] = useToolsDetail(inventoryId);
+  const { inventoryId: toolsId } = useParams();
+  const [detail, setDetail] = useToolsDetail(toolsId);
   const stokeRef = useRef("");
 
   //handle delivered
@@ -28,7 +26,7 @@ const ProductDetail = () => {
       quantity: quantity,
     };
 
-    const url = `tools.json/tool/${inventoryId}`;
+    const url = `tools.json/tool/${toolsId}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -45,7 +43,7 @@ const ProductDetail = () => {
         // console.error('Error:', error);
       });
     toast.success(`One Item Delivered `, { id: "delivered" });
-    navigate("/inventory/" + inventoryId);
+    navigate("/inventory/" + toolsId);
 
     if (toolsInfo?.quantity < 0) {
       return;
@@ -81,7 +79,7 @@ const ProductDetail = () => {
         setDetail(toolsInfo);
       }
 
-      const url = `tool.json/tool/${inventoryId}`;
+      const url = `tools.json/tool/${toolsId}`;
       fetch(url, {
         method: "PUT",
         headers: {
@@ -99,7 +97,7 @@ const ProductDetail = () => {
         });
       toast.success(`Restock Item Success `, { id: "restock" });
       event.target.reset();
-      navigate("/inventory/" + inventoryId);
+      navigate("/inventory/" + toolsId);
     }
   };
 
@@ -178,35 +176,6 @@ const ProductDetail = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="container mt-5 ">
-        <div className="row container py-5 custom-border-top">
-          <div className="col-md-6 ">
-            <div>
-              <h4 className="">Specification </h4>
-              <div className="w-25 ">
-                <hr />
-              </div>
-              <p>
-                <span className="fs-5 fw-bold">Af - Points :</span>{" "}
-                {detail?.afPoints}
-              </p>
-              <p>
-                <span className="fs-5 fw-bold">Movie Type :</span>{" "}
-                {detail?.movieType}
-              </p>
-              <p>
-                <span className="fs-5 fw-bold">Modes :</span> {detail?.modes}
-              </p>
-            </div>
-            <h3>Description</h3>
-            <div className="pt-3 ">
-              <p style={{ textAlign: "justify" }}>{detail?.description}</p>
-            </div>
-          </div>
-          <div className="col-md-3"></div>
-          <div className="col-md-3"></div>
         </div>
       </div>
     </div>

@@ -95,16 +95,14 @@ const Blogs = () => {
       <div class="card w-full bg-base-100 shadow-xl">
         <div class="card-body">
           <h2 class="card-title text-2xl font-bold ml-4">
-            5. What are the different ways to manage a state in a React
-            application?
+            5. You have an array of products. Each product has a name, price,
+            description, etc. How will you implement a search to find products
+            by name?
           </h2>
           <p className="ml-2">
-            <span className="text-xl ml-6 font-bold">Answer :</span>I have a
-            list of products (i.e an array) . Each product is an object with
-            property id, name. description, price, etc… The answer would be:{" "}
-            <span className=" font-bold">[ products[0].name ].</span>
-            Note: I cann't give example because of we cann't write code in html
-            tags.
+            <span className="text-xl ml-6 font-bold">Answer :</span>I will use
+            rest api for this and use the name of the specific product to find
+            them. I will find it in rest api.
           </p>
         </div>
       </div>

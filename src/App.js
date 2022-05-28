@@ -15,6 +15,7 @@ import MyOrders from "./Pages/Dashboard/MyOrders";
 import MyReview from "./Pages/Dashboard/MyReview";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import ToolsPurchaseDetail from "./Pages/Home/Home/ToolsPurchaseDetails/ToolsPuchaseDetail";
 function App() {
   return (
     <div className="">
@@ -42,6 +43,14 @@ function App() {
           element={
             <RequireAuth>
               <Tools></Tools>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/tools/:toolsId"
+          element={
+            <RequireAuth>
+              <ToolsPurchaseDetail></ToolsPurchaseDetail>
             </RequireAuth>
           }
         ></Route>
