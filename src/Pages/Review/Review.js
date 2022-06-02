@@ -1,169 +1,92 @@
-import React from "react";
-import person1 from "../../assets/person-1.png";
-import person2 from "../../assets/person-2.png";
-import person3 from "../../assets/person-3.png";
+import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { Rating } from "react-simple-star-rating";
 
-const Review = () => {
+import auth from "../../firebase.init";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
+import "./Review.css";
+
+const AddReview = () => {
+  const [user] = useAuthState(auth);
+  const [ratingValue, setRatingValue] = useState(0);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+  const [reviewAdding, setReviewAdding] = useState(false);
+  const handleRating = (rate) => {
+    setRatingValue(rate);
+  };
+
+  const addReview = async (data) => {
+    setReviewAdding(true);
+    const review = {
+      ratings: ratingValue,
+      author: user.displayName,
+      comment: data.feedback,
+      image: user.photoURL,
+    };
+
+    fetch("https://hexa-tools.herokuapp.com/review", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+      body: JSON.stringify(review),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          reset();
+          toast.success("Thanks for your review!");
+          setReviewAdding(false);
+        }
+      });
+  };
   return (
-    <div>
-      <h1 className="text-center my-6 text-3xl text-primary font-bold">
-        Ours Client Reviews
-      </h1>
-      ;
-      <div className="my-6 ml-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="card w-96 bg-base-100 shadow-xl">
-          <figure class="px-10 pt-10">
-            <img src={person1} alt="Shoes" class="rounded-xl" />
-          </figure>
-          <div class="card-body items-center text-center">
-            <h2 class="card-title">Paul Jacks</h2>
-            <p>
-              This is one of the best car tools manufacturer company.Their
-              Products are premium.I suggest all others client who needs good
-              car parts you can blind foldly choose them.{" "}
-            </p>
-          </div>
+    <div className="my-6 ml-24 md:ml-36 lg:ml-48">
+      <PageTitle title="Add Review"></PageTitle>
+      <h2 className="text-xl mb-5">Add a review</h2>
+      <form
+        onSubmit={handleSubmit(addReview)}
+        className=" max-w-xl flex flex-col gap-5 text-left"
+      >
+        <Rating
+          transition
+          onClick={handleRating}
+          ratingValue={ratingValue}
+          showTooltip
+          tooltipArray={["Terrible", "Bad", "Average", "Great", "Prefect"]}
+          fillColorArray={[
+            "#f17a45",
+            "#f19745",
+            "#f1a545",
+            "#f1b345",
+            "#f1d045",
+          ]}
+        ></Rating>
 
-          <div className="flex justify-center items-center mb-4">
-            <h1 className=" font-bold">Ratings : (5.0) </h1>
-
-            <div class="rating">
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-                checked
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-                checked
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-                checked
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-                checked
-              />
-            </div>
-          </div>
-        </div>
-        {/* 2 */}
-
-        <div class="card w-96 bg-base-100 shadow-xl">
-          <figure class="px-10 pt-10">
-            <img src={person2} alt="Shoes" class="rounded-xl" />
-          </figure>
-          <div class="card-body items-center text-center">
-            <h2 class="card-title">Jonthan Rostam</h2>
-            <p>
-              I think this car tools manufacturer company is client
-              friendly.They communicate with client and assist them which
-              product suitable for their cars.i personaly pefer them.{" "}
-            </p>
-          </div>
-
-          <div className="flex justify-center items-center mb-4">
-            <h1 className=" font-bold">Ratings : (5.0) </h1>
-
-            <div class="rating rating-lg rating-half">
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-                checked
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-                checked
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-                checked
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-                checked
-              />
-            </div>
-          </div>
-        </div>
-        <div class="card w-96 bg-base-100 shadow-xl">
-          <figure class="px-10 pt-10">
-            <img src={person3} alt="Shoes" class="rounded-xl" />
-          </figure>
-          <div class="card-body items-center text-center">
-            <h2 class="card-title">Willium Ball</h2>
-            <p>
-              So many products from so many manufacturers - I really like the
-              site for the choices it offers, not to mention the great pricing.
-              Compared with a few other sites and the prices are definitely
-              lower.{" "}
-            </p>
-          </div>
-
-          <div className="flex justify-center items-center mb-4">
-            <h1 className=" font-bold">Ratings : (4.9) </h1>
-            <span></span>
-            <div class="rating">
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-                checked
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-                checked
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-                checked
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
-                checked
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+        <textarea
+          {...register("feedback", { required: true })}
+          className="textarea textarea-bordered w-full"
+          placeholder="Write your feedback"
+        />
+        {errors.feedback?.type === "required" && (
+          <p className="text-red-400 text-sm ">Please write your feedback!</p>
+        )}
+        <input
+          type="submit"
+          value={reviewAdding ? "Adding..." : "Add Review"}
+          className=" btn btn-primary text-lg text-white mt-3"
+        />
+      </form>
     </div>
   );
 };
 
-export default Review;
+export default AddReview;

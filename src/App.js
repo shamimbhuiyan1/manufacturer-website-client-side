@@ -15,7 +15,9 @@ import MyOrders from "./Pages/Dashboard/MyOrders";
 import MyReview from "./Pages/Dashboard/MyReview";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import ToolsPurchaseDetail from "./Pages/Home/Home/ToolsPurchaseDetails/ToolsPuchaseDetail";
+import AddProduct from "./Pages/AddProducts/AddProducts";
+import RequireAdmin from "./Pages/Login/RequireAdmin/RequireAdmin";
+
 function App() {
   return (
     <div className="">
@@ -47,11 +49,11 @@ function App() {
           }
         ></Route>
         <Route
-          path="/tools/:toolsId"
+          path="add-product"
           element={
-            <RequireAuth>
-              <ToolsPurchaseDetail></ToolsPurchaseDetail>
-            </RequireAuth>
+            <RequireAdmin>
+              <AddProduct></AddProduct>
+            </RequireAdmin>
           }
         ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
