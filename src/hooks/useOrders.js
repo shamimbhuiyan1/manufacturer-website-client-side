@@ -1,25 +1,11 @@
-/* import { useEffect, useState } from "react";
-
-const useTools = () => {
-  const [tools, setTools] = useState([]);
-  useEffect(() => {
-    fetch("https://tranquil-mountain-12597.herokuapp.com/tools")
-      .then((res) => res.json())
-      .then((data) => setTools(data));
-  }, []);
-  return [tools, setTools];
-};
-
-export default useTools; */
-
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useLocation } from "react-router-dom";
 import auth from "../firebase.init";
 
-const useTools = (reload, reloadModal) => {
+const useOrders = (email) => {
   //Declaring State
-  const [tools, setTools] = useState([]);
+  const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   // React Firebase Hook
@@ -31,7 +17,7 @@ const useTools = (reload, reloadModal) => {
   // React Hook for Fetching All Books From The Server API
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://tranquil-mountain-12597.herokuapp.com/tools", {
+    fetch(`https://manufacturer-xpart.herokuapp.com/orders/${email}`, {
       headers: {
         "Content-Type": "application/json",
         email: `${authUser?.email}`,
@@ -40,12 +26,12 @@ const useTools = (reload, reloadModal) => {
     })
       .then((response) => response.json())
       .then((json) => {
-        setTools(json);
+        setOrders(json);
         setIsLoading(false);
       });
-  }, [pathname, authUser, reload, reloadModal]);
+  }, [pathname, authUser, email]);
 
-  return [tools, setTools, isLoading];
+  return [orders, setOrders, isLoading, setIsLoading];
 };
 
-export default useTools;
+export default useOrders;
