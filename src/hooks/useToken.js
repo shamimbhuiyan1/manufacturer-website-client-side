@@ -1,27 +1,32 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 
 const useToken = (user) => {
-  //Declaring State
   const [token, setToken] = useState("");
-
-  //useEffect Hook to Create JWT Token during Login And Sign Up
   useEffect(() => {
-    const getToken = async () => {
-      const email = user?.email;
-      if (email) {
-        const { data } = await axios.post(
-          "https://tranquil-mountain-12597.herokuapp.com/login",
-          {
-            email,
-          }
-        );
-        setToken(data.accessToken);
-        localStorage.setItem("accessToken", data.accessToken);
-      }
+    const email = user?.user.email;
+    const name = user?.user.displayName;
+    const photo = user?.user.photoURL;
+    const currentUser = {
+      name,
+      email,
+      photo,
     };
-    getToken();
+    if (email) {
+      fetch(`https://hexa-tools.herokuapp.com/user/${email}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(currentUser),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setToken(data.token);
+          localStorage.setItem("accessToken", data.token);
+        });
+    }
   }, [user]);
+
   return [token];
 };
 
