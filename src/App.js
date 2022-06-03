@@ -11,8 +11,7 @@ import Portfolio from "./Pages/Portfolio/Portfolio";
 import Footer from "./Shared/Footer/Footer";
 import Navbar from "./Shared/Navbar/Navbar";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
-import MyOrders from "./Pages/Dashboard/MyOrders";
-import MyProfile from "./Pages/Dashboard/MyProfile";
+import MyProfile from "./Pages/MyProfile/MyProfile";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import RequireAdmin from "./Pages/Login/RequireAdmin/RequireAdmin";
 import AddProducts from "./Pages/AddProducts/AddProducts";
@@ -24,6 +23,8 @@ import Review from "./Pages/Review/Review";
 import ManageAllOrders from "./Pages/ManageAllOrders/ManageAllOrders";
 import ManageProducts from "./Pages/ManageProducts/ManageProducts";
 import MakeAdmin from "./Pages/Login/MakeAdmin/MakeAdmin";
+import MyOrders from "./Pages/MyOrders/MyOrders";
+import { Toaster } from "react-hot-toast";
 
 const queryClient = new QueryClient();
 function App() {
@@ -105,6 +106,11 @@ function App() {
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
         <Footer></Footer>
+        <Toaster
+          position="top-center"
+          reverseOrder={true}
+          toastOptions={{ duration: 4000 }}
+        />
       </QueryClientProvider>
     </div>
   );

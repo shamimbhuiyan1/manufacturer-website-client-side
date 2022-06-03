@@ -4,8 +4,8 @@ import auth from "../../firebase.init";
 import UpdateProfileForm from "./UpdateProfileForm";
 import { GrFacebookOption, GrGithub } from "react-icons/gr";
 import useUserInfo from "../../hooks/useUserInfo";
-import Loading from "../../components/Loading/Loading";
-import PageTitle from "../../components/shared/PageTitle";
+import Loading from "../../Shared/Loading/Loading";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 
 const MyProfile = () => {
   const [user, loading] = useAuthState(auth);

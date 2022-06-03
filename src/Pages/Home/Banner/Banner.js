@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import factory from "../../../assets/automating-manufacturing-processes.webp";
 const Banner = () => {
   return (
@@ -16,7 +17,9 @@ const Banner = () => {
               NEW TECHNOLOGY & <h1> BUILD</h1>
             </h1>
 
-            <button className="btn btn-primary text-black mt-5">BUY NOW</button>
+            <button className="btn btn-primary text-black mt-5">
+              <Link to="/products">BUY NOW</Link>
+            </button>
           </div>
         </div>
       </div>
