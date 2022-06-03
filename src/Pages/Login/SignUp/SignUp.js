@@ -6,7 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { useForm } from "react-hook-form";
-
+import useToken from "../../../hooks/useToken";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../../Shared/Loading/Loading";
 
@@ -23,6 +23,7 @@ const SignUp = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   const navigate = useNavigate();
+  const [token] = useToken(user || gUser);
 
   let signInError;
 
