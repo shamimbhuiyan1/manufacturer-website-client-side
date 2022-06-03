@@ -1,18 +1,21 @@
 import React from "react";
-import Review from "../../Review/Review";
+import Reviews from "../../../Pages/Reviews/Reviews";
 import Banner from "../Banner/Banner";
 import BusinessSummary from "../BusinessSummary/BusinessSummary";
 import Integration from "../Integration/Integration";
-import Tools from "../Tools/Tools";
+
 import Contact from "./Contact/Contact";
+import HomeProducts from "../HomeProducts/HomeProducts";
+import PageTitle from "../../../Shared/PageTitle/PageTitle";
 
 const Home = () => {
   return (
     <div className="">
+      <PageTitle title="Home"></PageTitle>
       <Banner></Banner>
       <Integration></Integration>
-      <Tools></Tools>
-      <Review></Review>
+      <HomeProducts></HomeProducts>
+      <Reviews></Reviews>
       <Contact></Contact>
       <BusinessSummary></BusinessSummary>
     </div>

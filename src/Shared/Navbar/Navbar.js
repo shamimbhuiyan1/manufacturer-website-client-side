@@ -16,10 +16,10 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/tools">Tools</Link>
+        <Link to="/Products">Tools</Link>
       </li>
       <li>
-        <Link to="/portfolio">Portfolio</Link>
+        <Link to="/portfolio">My Portfolio</Link>
       </li>
       <li>
         <Link to="/blogs">Blogs</Link>
@@ -70,8 +70,8 @@ const Navbar = () => {
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl">
             {" "}
-            <span className="text-[#f77728]">CARTOOL</span>{" "}
-            <span className="text-gold-300">MANAGEMENT</span>
+            <span className="text-[#f77728]">TOOLS</span>{" "}
+            <span className="text-gold-300">MANUFACTURER</span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex ">

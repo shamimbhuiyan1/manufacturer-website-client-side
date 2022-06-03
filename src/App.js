@@ -3,7 +3,7 @@ import "./App.css";
 import Blogs from "./Pages/Blogs/Blogs";
 import Contact from "./Pages/Home/Home/Contact/Contact";
 import Home from "./Pages/Home/Home/Home";
-import Tools from "./Pages/Home/Tools/Tools";
+import Tools from "./Pages/Home/HomeProducts/HomeProducts";
 import Login from "./Pages/Login/Login/Login";
 import SignUp from "./Pages/Login/SignUp/SignUp";
 import NotFound from "./Pages/NotFound/NotFound";
@@ -12,11 +12,11 @@ import Footer from "./Shared/Footer/Footer";
 import Navbar from "./Shared/Navbar/Navbar";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
 import MyOrders from "./Pages/Dashboard/MyOrders";
-import MyReview from "./Pages/Dashboard/MyReview";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import AddProduct from "./Pages/AddProducts/AddProducts";
 import RequireAdmin from "./Pages/Login/RequireAdmin/RequireAdmin";
+import AddProducts from "./Pages/AddProducts/AddProducts";
 
 function App() {
   return (
@@ -37,14 +37,14 @@ function App() {
           }
         >
           <Route index element={<MyOrders></MyOrders>}></Route>
-          <Route path="review" element={<MyReview></MyReview>}></Route>
+
           <Route path="profile" element={<MyProfile></MyProfile>}></Route>
         </Route>
         <Route
-          path="/tools"
+          path="/add-product"
           element={
             <RequireAuth>
-              <Tools></Tools>
+              <AddProducts></AddProducts>
             </RequireAuth>
           }
         ></Route>
