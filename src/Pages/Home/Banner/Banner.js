@@ -1,12 +1,12 @@
 import React from "react";
-import car from "../../../assets/banner red car.jpg";
+import factory from "../../../assets/automating-manufacturing-processes.webp";
 const Banner = () => {
   return (
     <div>
       <div className="hero min-h-screen  mb-56 ">
         <img
           style={{ height: "1000px", width: "3000px" }}
-          src={car}
+          src={factory}
           alt="car"
         />
         <div className="hero-overlay bg-opacity-60"></div>

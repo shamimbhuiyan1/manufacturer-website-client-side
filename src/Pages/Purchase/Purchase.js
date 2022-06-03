@@ -290,7 +290,7 @@ const Purchase = () => {
                 <input
                   type="submit"
                   value="Place Order"
-                  className=" btn btn-primary text-lg text-white mt-3"
+                  className=" btn btn-secondary bg-primary text-lg text-white mt-3"
                   disabled={quantity < minimumUnit || quantity > availableUnit}
                 />
               </form>

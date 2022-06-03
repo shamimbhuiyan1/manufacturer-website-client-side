@@ -8,7 +8,7 @@ import auth from "../../firebase.init";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import "./Review.css";
 
-const AddReview = () => {
+const Review = () => {
   const [user] = useAuthState(auth);
   const [ratingValue, setRatingValue] = useState(0);
   const {
@@ -89,4 +89,4 @@ const AddReview = () => {
   );
 };
 
-export default AddReview;
+export default Review;

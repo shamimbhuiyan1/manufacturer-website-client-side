@@ -16,7 +16,7 @@ const Product = ({ product }) => {
           alt=""
           className="item-thumbnail w-full h-full object-cover rounded-t-lg transition-all duration-500"
         />
-        <span className="absolute top-0 right-0 text-sm bg-primary-content text-black py-1 px-2">
+        <span className="absolute top-0 right-0 text-sm bg-primary-content text-white py-1 px-2">
           Available: <strong>{available}</strong>
         </span>
       </div>
@@ -28,7 +28,7 @@ const Product = ({ product }) => {
           <h4>Minimum Order: {minimum_order}</h4>
           <button
             onClick={() => redirectToPurchase(_id)}
-            className="bg-secondary hover:bg-secondary-focus py-2 px-5 capitalize text-white  rounded-sm mt-2 text-md font-bold"
+            className="bg-primary hover:bg-focus py-2 px-5 capitalize text-white  rounded-sm mt-2 text-md font-bold"
           >
             Place order
           </button>
