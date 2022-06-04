@@ -27,7 +27,7 @@ const Navbar = () => {
           to="/products"
           className="hover:text-secondary active:text-secondary"
         >
-          Tools
+          Products
         </Link>
       </li>
       <li>

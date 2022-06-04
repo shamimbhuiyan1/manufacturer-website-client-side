@@ -8,7 +8,7 @@ const Integration = () => {
   return (
     <div>
       <h1 className="text-center text-primary text-3xl font-bold">
-        What Does The Digital Car Tools Integration
+        What Does The Digital Tools Integration
       </h1>
       ;
       <div className="ml-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
@@ -19,10 +19,10 @@ const Integration = () => {
           <div class="card-body items-center text-center">
             <h2 class="card-title">Multichannel Sales</h2>
             <p>
-              Bid farewell to standalone tools, as Car Inventory centralizes all
-              orders across sources and then classifies them under appropriate
-              filters, based on their current status, making it your complete.
-              You can also keep track of product serial numbers
+              Bid farewell to standalone tools, as tools Inventory centralizes
+              all orders across sources and then classifies them under
+              appropriate filters, based on their current status, making it your
+              complete. You can also keep track of product serial numbers
             </p>
           </div>
         </div>

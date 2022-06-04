@@ -127,7 +127,7 @@ const Login = () => {
           </form>
           <p className="text-center">
             <small>
-              New to Car Tools Management{" "}
+              New to Tools Manufacturer{" "}
               <Link className="text-primary" to="/signup">
                 Create New Account
               </Link>

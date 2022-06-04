@@ -157,7 +157,7 @@ const SignUp = () => {
             <small>
               Already have an account?{" "}
               <Link className="text-primary" to="/login">
-                Please SignIn
+                Please Sign In
               </Link>
             </small>
           </p>
